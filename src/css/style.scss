@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+$background: white;
+$button: #e60073;
+$text: #ff3399;
+html {
+  font-size: 62.5%;
+  body {
+    font-family: "Permanent Marker", cursive;
+    background-image: (url(../images/background.png));
+    background-color: rgb(242, 242, 242, 0.4);
+    background-blend-mode: lighten;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+}
+.container {
+  width: 98%;
+  height: 100vh;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .particles-btn {
+    position: relative;
+    outline: 0;
+    background-color: pink;
+    font-size: 2rem;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 4px;
+    color: $text;
+    box-shadow: 0px 2px 10px lighten($button, 20%);
+    top: -4px;
+    transition: all 0.2s;
+    user-select: none;
+
+    &:hover,
+    &.active {
+      background-color: darken($button, 10%);
+      color: lighten($text, 20%);
+    }
+    &.active {
+      top: 0px;
+      box-shadow: 0px 0px 4px lighten($button, 20%);
+      pointer-events: none;
+    }
+    .particle {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: 1;
+      z-index: -2;
+      border-radius: 50%;
+      &:nth-child(even) {
+        background-color: lighten($button, 10%) !important;
+      }
+    }
+  }
+  @for $i from 1 through 400 {
+    .particle:nth-child(#{$i}) {
+      $value: #{random(30)}px;
+      height: $value;
+      width: $value;
+      border: #{random(2)}px solid lighten($button, 10%);
+      background-color: transparent;
+    }
+  }
+}
