@@ -53,7 +53,7 @@ button.addEventListener("click", () => {
     button.style.display = "none";
     divImg.style.display = "block";
     divImg.classList.add("rotating");
-    imgSom.style.display = "inline";
+    imgSom.style.display = "block";
     imgSom.classList.add("fade-in-image");
   }
   setTimeout(() => {
