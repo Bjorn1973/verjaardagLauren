@@ -459,107 +459,56 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"3auaO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _styleScss = require("../css/style.scss");
-var _button = require("./Components/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-const holder = document.querySelector(".container");
-new _buttonDefault.default(holder);
-
-},{"../css/style.scss":"efzMA","./Components/Button":"h3xku","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"efzMA":[function() {},{}],"h3xku":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-class Button {
-    constructor(holder){
-        this.holder = holder;
-        this.btn = null;
-        this.init();
-        this.render();
-        this.events();
-    }
-    init() {
-        this.holder.insertAdjacentHTML("beforeend", `<button class='particles-btn' data-particle='50' data-radius='700'>Klik hier</button>`);
-        this.btn = document.querySelector(".particles-btn");
-    }
-    render() {
-    }
-    events() {
-        this.btn.addEventListener("click", ()=>{
-            let radius = parseInt(this.btn.getAttribute("data-radius"));
-            let particles = this.btn.getAttribute("data-particle");
-            for(let i = 0; i < particles; i++)this.btn.insertAdjacentHTML("beforeend", "<span class=particle></span>");
-            this.btn.classList.add("active");
-            const children = [
-                ...document.querySelectorAll(".particle")
-            ];
-            const getRandomInt = (min, max)=>{
-                return Math.floor(Math.random() * (max - min)) + min;
-            };
-            const from = {
-                opacity: 1,
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0
-            };
-            const to = ()=>({
-                    opacity: 0,
-                    top: getRandomInt(-radius, +radius) + "px",
-                    left: getRandomInt(-radius, +radius) + "px",
-                    right: getRandomInt(-radius, +radius) + "px",
-                    bottom: getRandomInt(-radius, +radius) + "px"
-                })
-            ;
-            const animations = children.map((child)=>child.animate([
-                    from,
-                    to()
-                ], 600).finished
-            );
-            Promise.all(animations).then(cleanUp.bind(this));
-            function cleanUp() {
-                const particlesToRemove = [
-                    ...document.querySelectorAll(".particle")
-                ];
-                particlesToRemove.forEach((el)=>this.btn.removeChild(el)
-                );
-                this.btn.classList.remove("active");
-                this.btn.style.display = "none";
-            }
-        });
-    }
-}
-exports.default = Button;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
+const button = document.querySelector(".particles-btn");
+const song = document.querySelector(".song");
+button.addEventListener("click", ()=>{
+    let radius = parseInt(button.getAttribute("data-radius"));
+    let particles = button.getAttribute("data-particle");
+    for(let i = 0; i < particles; i++)button.insertAdjacentHTML("beforeend", "<span class=particle></span>");
+    button.classList.add("active");
+    const children = [
+        ...document.querySelectorAll(".particle")
+    ];
+    const getRandomInt = (min, max)=>{
+        return Math.floor(Math.random() * (max - min)) + min;
     };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
+    const from = {
+        opacity: 1,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
+    };
+    const to = ()=>({
+            opacity: 0,
+            top: getRandomInt(-radius, +radius) + "px",
+            left: getRandomInt(-radius, +radius) + "px",
+            right: getRandomInt(-radius, +radius) + "px",
+            bottom: getRandomInt(-radius, +radius) + "px"
+        })
+    ;
+    const animations = children.map((child)=>child.animate([
+            from,
+            to()
+        ], 600).finished
+    );
+    Promise.all(animations).then(cleanUp.bind(undefined));
+    function cleanUp() {
+        const particlesToRemove = [
+            ...document.querySelectorAll(".particle")
+        ];
+        particlesToRemove.forEach((el)=>button.removeChild(el)
+        );
+        button.classList.remove("active");
+        button.style.display = "none";
+    }
+    function playAudio() {
+        song.play();
+    }
+    playAudio();
+});
 
-},{}]},["cSv3F","3auaO"], "3auaO", "parcelRequire2798")
+},{"../css/style.scss":"efzMA"}],"efzMA":[function() {},{}]},["cSv3F","3auaO"], "3auaO", "parcelRequire2798")
 
 //# sourceMappingURL=index.8b7fb9b3.js.map
