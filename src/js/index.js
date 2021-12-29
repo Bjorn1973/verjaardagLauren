@@ -2,8 +2,15 @@ import "../css/style.scss";
 
 const button = document.querySelector(".particles-btn");
 const song = document.querySelector(".song");
+const divImg = document.querySelector(".imgWrapper");
+const imgSom = document.querySelector(".somImg");
+const inf = document.querySelector(".h2Wrapper");
 
 button.addEventListener("click", () => {
+  function playAudio() {
+    song.play();
+  }
+  playAudio();
   let radius = parseInt(button.getAttribute("data-radius"));
   let particles = button.getAttribute("data-particle");
 
@@ -44,9 +51,13 @@ button.addEventListener("click", () => {
     particlesToRemove.forEach((el) => button.removeChild(el));
     button.classList.remove("active");
     button.style.display = "none";
+    divImg.style.display = "block";
+    divImg.classList.add("rotating");
+    imgSom.style.display = "inline";
+    imgSom.classList.add("fade-in-image");
   }
-  function playAudio() {
-    song.play();
-  }
-  playAudio();
+  setTimeout(() => {
+    inf.style.display = "flex";
+    inf.classList.add("slide-in");
+  }, 8000);
 });

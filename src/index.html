@@ -7,8 +7,9 @@
     <title>Verjaardag Lauren</title>
   </head>
   <body>
+    <include src="./symbol-defs.svg"></include>
     <div class="container">
-      <h1 class="title">happy Birthday Lauren</h1>
+      <h1 class="title">happy Birthday Lauren!</h1>
       <button class="particles-btn" data-particle="50" data-radius="700">
         Klik hier <br />
         voor je cadeau!
@@ -16,6 +17,29 @@
       <audio controls class="song">
         <source src="./music/do-re-mi.mp3" type="audio/mp3" />
       </audio>
+      <div class="imgWrapper">
+        <img class="somImg" src="./images/TSOM.jpg" alt="" />
+      </div>
+      <div class="h2Wrapper">
+        <h2>
+          <svg class="icon icon-calendar">
+            <use xlink:href="./includes/symbol-defs.svg#icon-calendar"></use>
+          </svg>
+          woensdag 13 april 2022
+        </h2>
+        <h2>
+          <svg class="icon icon-clock">
+            <use xlink:href="./includes/symbol-defs.svg#icon-clock"></use>
+          </svg>
+          20.00 uur
+        </h2>
+        <h2>
+          <svg class="icon icon-location_on">
+            <use xlink:href="./includes/symbol-defs.svg#icon-location_on"></use>
+          </svg>
+          Stadsschouwburg, Antwerpen
+        </h2>
+      </div>
     </div>
     <script type="module" src="js/index.js"></script>
   </body>
