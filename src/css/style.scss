@@ -19,7 +19,7 @@ html {
 }
 .container {
   width: 98%;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
   top: 0;
   left: 0;
@@ -32,9 +32,9 @@ html {
   h1.title {
     color: $text;
     position: absolute;
-    width: 115rem;
+    width: 117rem;
     top: 1rem;
-    left: calc(50% - (115rem / 2));
+    left: calc(50% - (117rem / 2));
     font-size: 10rem;
     margin: 0;
   }
@@ -273,8 +273,8 @@ html {
 @media screen and(max-width:1200px) {
   .container {
     h1.title {
-      width: 90rem;
-      left: calc(50% - (90rem / 2));
+      width: 94rem;
+      left: calc(50% - (94rem / 2));
       font-size: 8rem;
     }
   }
@@ -293,8 +293,8 @@ html {
 @media screen and(max-width:1000px) {
   .container {
     h1.title {
-      width: 80rem;
-      left: calc(50% - (80rem / 2));
+      width: 82rem;
+      left: calc(50% - (82rem / 2));
       font-size: 7rem;
     }
     .imgWrapper {
@@ -332,8 +332,8 @@ html {
 @media screen and(max-width:750px) {
   .container {
     h1.title {
-      width: 57rem;
-      left: calc(50% - (57rem / 2));
+      width: 59rem;
+      left: calc(50% - (59rem / 2));
       font-size: 5rem;
       top: 4rem;
     }
@@ -348,8 +348,8 @@ html {
 @media screen and(max-width:600px) {
   .container {
     h1.title {
-      width: 51rem;
-      left: calc(50% - (51rem / 2));
+      width: 53rem;
+      left: calc(50% - (53rem / 2));
       font-size: 4.5rem;
     }
     .imgWrapper {
@@ -364,8 +364,8 @@ html {
 @media screen and(max-width:550px) {
   .container {
     h1.title {
-      width: 45rem;
-      left: calc(50% - (45rem / 2));
+      width: 47rem;
+      left: calc(50% - (47rem / 2));
       font-size: 4rem;
     }
     .h2Wrapper {
@@ -393,8 +393,8 @@ html {
 @media screen and(max-width:475px) {
   .container {
     h1.title {
-      width: 40rem;
-      left: calc(50% - (40rem / 2));
+      width: 41rem;
+      left: calc(50% - (41rem / 2));
       font-size: 3.5rem;
       top: 6rem;
     }
@@ -473,7 +473,7 @@ html {
     }
     .h2Wrapper {
       left: 2%;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       .icon {
         width: 2rem;
         height: 2rem;
@@ -485,7 +485,7 @@ html {
   .container {
     .h2Wrapper {
       left: 8%;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       .icon {
         width: 2rem;
         height: 2rem;
